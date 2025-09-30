@@ -1,0 +1,18 @@
+[project]
+name = "divination-chart-mcp"
+version = "0.1.0"
+description = "MCP server for generating divination charts including six-line."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "divicast>=0.1.1",
+    "mcp>=1.15.0",
+    "pydantic>=2.11.9",
+]
+authors = [
+    { name = "Wáng Sōng", email = "wangsquirrel@gmail.com" }
+]
+license = { file = "LICENSE" }
+[project.scripts]
+sixline = "main:sixline"
+divination-chart-mcp = "main:all"
