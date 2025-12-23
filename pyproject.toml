@@ -9,6 +9,9 @@ dependencies = [
     "mcp>=1.15.0",
     "pydantic>=2.11.9",
 ]
+
+
+
 authors = [
     { name = "Wáng Sōng", email = "wangsquirrel@gmail.com" }
 ]
@@ -16,3 +19,6 @@ license = { file = "LICENSE" }
 [project.scripts]
 sixline = "main:sixline"
 divination-chart-mcp = "main:all"
+
+[tool.uv]
+package = true

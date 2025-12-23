@@ -10,6 +10,7 @@ from divicast.sixline.output import StandardDivinatorySymbolOutput  # type: igno
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel, Field
 
+
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
@@ -66,18 +67,25 @@ def sixline():
 
 def all():
 
+    fast_mcp = get_fast_mcp()
+    run(fast_mcp)
+
+
+def get_fast_mcp() -> FastMCP:
+    """
+    创建并返回一个FastMCP实例
+    """
     fast_mcp = FastMCP(
         name="divination-charting-mcp",
         instructions="占卜排盘的MCP服务器",
     )
-
     description_with_output_schema = (
         "六爻排盘工具 - 根据年月日时进行六爻占卜排盘，返回六爻盘面的详细信息。返回结果遵循以下JSON Schema定义:\n"
         + f"""{json.dumps(StandardDivinatorySymbolOutput.model_json_schema(), ensure_ascii=False)}"""
     )
 
     fast_mcp.tool(description=description_with_output_schema)(divination_liu_yao)
-    run(fast_mcp)
+    return fast_mcp
 
 
 def run(fast_mcp: FastMCP):
