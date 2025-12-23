@@ -9,7 +9,9 @@ from divicast.sixline import to_standard_format
 from divicast.sixline.output import StandardDivinatorySymbolOutput  # type: ignore
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel, Field
+from importlib.metadata import version
 
+__version__ = version("divination-chart-mcp")
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"

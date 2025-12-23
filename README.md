@@ -46,3 +46,11 @@ uv run --with . divination-chart-mcp
   }
 }
 ```
+
+### 部署服务
+
+- 使用asgi服务器，如uvicorn,可以直接启动sse服务
+```bash
+    uvicorn api.index:app --host 0.0.0.0 --port 3000
+```
+- 也可以直接在 Vercel 上部署这个项目，使用的是`vercel.json`配置文件。
