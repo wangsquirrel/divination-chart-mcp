@@ -20,5 +20,8 @@ license = { file = "LICENSE" }
 sixline = "main:sixline"
 divination-chart-mcp = "main:all"
 
+[tool.setuptools]
+py-modules = ["main"]
+
 [tool.uv]
 package = true
