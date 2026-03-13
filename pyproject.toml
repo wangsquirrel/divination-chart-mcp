@@ -1,27 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "divination-chart-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "MCP server for generating divination charts including six-line."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "divicast>=0.1.1",
-    "mcp>=1.15.0",
+    "fastmcp>=2.14.5",
+    "mcp>=1.24.0,<2.0",
     "pydantic>=2.11.9",
 ]
-
-
 
 authors = [
     { name = "Wáng Sōng", email = "wangsquirrel@gmail.com" }
 ]
 license = { file = "LICENSE" }
-[project.scripts]
-sixline = "main:sixline"
-divination-chart-mcp = "main:all"
 
-[tool.setuptools]
-py-modules = ["main"]
+[project.scripts]
+sixline = "divination_chart_mcp.cli:sixline"
+divination-chart-mcp = "divination_chart_mcp.cli:all"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/divination_chart_mcp"]
 
 [tool.uv]
 package = true

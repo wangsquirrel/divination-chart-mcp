@@ -6,6 +6,8 @@ dist/
 wheels/
 *.egg-info
 .vscode/
+.claude/
+.mypy_cache/
 
 # Virtual environments
 .venv

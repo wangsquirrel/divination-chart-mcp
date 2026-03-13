@@ -1,5 +1,4 @@
-from main import get_fast_mcp
+from divination_chart_mcp.asgi import app
 
-fast_mcp = get_fast_mcp()
-
-app = fast_mcp.sse_app()
+# app 已经是从 asgi.py 导出的 FastMCP SSE 应用
+# 直接导出给云平台使用
