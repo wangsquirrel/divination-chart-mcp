@@ -35,18 +35,33 @@ async def test_mcp_server():
                 logger.info(f"  输出Schema: {tool.outputSchema}")
 
             if tools:
-                tool_name = tools[0].name
+                tool_name = tools[1].name
                 logger.info(f"\n调用工具: {tool_name}")
-
-                arguments = {
-                    "input_data": {
-                        "year": 2024,
-                        "month": 9,
-                        "day": 19,
-                        "hour": 15,
-                        "yaogua": [0, 1, 1, 2, 1, 3],
+                arguments = {}
+                if tool_name == "divination_liu_yao":
+                    arguments = {
+                        "input_data": {
+                            "year": 2024,
+                            "month": 9,
+                            "day": 19,
+                            "hour": 15,
+                            "yaogua": [0, 1, 1, 2, 1, 3],
+                        }
                     }
-                }
+                elif tool_name == "divination_bazi":
+                    arguments = {
+                        "input_data": {
+                            "birth_year": 1990,
+                            "birth_month": 5,
+                            "birth_day": 20,
+                            "birth_hour": 10,
+                            "gender": 1,
+                            "now_year": 2024,
+                            "now_month": 9,
+                            "now_day": 19,
+                            "now_hour": 15,
+                        }
+                    }
 
                 logger.info(f"参数: {arguments}")
                 result = await asyncio.wait_for(

@@ -253,16 +253,12 @@ wheels = [
 
 [[package]]
 name = "divicast"
-version = "0.1.1"
-source = { registry = "https://pypi.org/simple" }
+version = "0.2.1"
+source = { git = "https://github.com/wangsquirrel/divicast.git?rev=v0.2.1#e422bf531f7d528aa208f011fc06c0367ee7ed98" }
 dependencies = [
     { name = "pydantic" },
     { name = "rich" },
     { name = "tyme4py" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/c8/83/3acf328f13ecf1a23c8482d3d21323e3129b5433a2d52ccd635aa77510cc/divicast-0.1.1.tar.gz", hash = "sha256:bf451a1a927d6467b57f7da15b5bad57a4845b1128eb230c785da610d11a2cb2", size = 26293, upload-time = "2025-09-29T10:17:35.799Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/35/3c/195e5b505f2786b060da7c2d96d7f6a7c6b3c99572308ef42cd113bb060e/divicast-0.1.1-py3-none-any.whl", hash = "sha256:7abd5e90658209147c99c99f99c0f67dbf3350720a8a4c2daebb5bb232aa68ae", size = 30866, upload-time = "2025-09-29T10:17:33.963Z" },
 ]
 
 [[package]]
@@ -278,7 +274,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "divicast", specifier = ">=0.1.1" },
+    { name = "divicast", git = "https://github.com/wangsquirrel/divicast.git?rev=v0.2.1" },
     { name = "fastmcp", specifier = ">=2.14.5" },
     { name = "mcp", specifier = ">=1.24.0,<2.0" },
     { name = "pydantic", specifier = ">=2.11.9" },

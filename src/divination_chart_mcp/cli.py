@@ -3,7 +3,7 @@ import logging
 
 from fastmcp import FastMCP
 
-from .server import fast_mcp
+from .server import fast_mcp, fast_mcp2
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -45,7 +45,7 @@ def run(fast_mcp: FastMCP, transport: str = None):
 
 def sixline():
     """CLI entry point for stdio transport"""
-    run(fast_mcp, transport="stdio")
+    run(fast_mcp2)
 
 
 def all():
