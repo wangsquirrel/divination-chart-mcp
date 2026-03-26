@@ -22,13 +22,13 @@ logger = logging.getLogger(__name__)
 
 fast_mcp = FastMCP(
     name="divination-charting-mcp",
-    instructions="占卜排盘的MCP服务器",
+    instructions="占卜排盘工具，提供六爻和八字排盘功能",
     dereference_schemas=True,
 )
 
 fast_mcp2 = FastMCP(
     name="sixline",
-    instructions="六爻排盘的MCP服务器",
+    instructions="六爻排盘工具",
     dereference_schemas=True,
 )
 

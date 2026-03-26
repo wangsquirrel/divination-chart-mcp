@@ -1,6 +1,6 @@
 # 占卜排盘 MCP
 
-这是一个用于生成占卜排盘（当前主要实现：六爻 / Six-line）的 MCP Server。
+这是一个用于生成占卜排盘（当前主要实现：六爻(Six-line)和八字(Bazi)）的 MCP Server。
 
 ## 使用
 
